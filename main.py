@@ -9,6 +9,15 @@ def application(env, start_response):
     elif env['REQUEST_URI'] == "/1/off":
         response = RELAY(PIN="IN1", OFF=True).switch
         response = "Red Led Has Turned Off"
+
+    elif env['REQUEST_URI'] == "/2/on":
+        response = RELAY(PIN="IN2", ON=True).switch
+        response = "Red Led Has Turned ON"
+        
+    elif env['REQUEST_URI'] == "/2/off":
+        response = RELAY(PIN="IN2", OFF=True).switch
+        response = "Red Led Has Turned Off"
+
     else:
         response = "LED Function not valid"
 
